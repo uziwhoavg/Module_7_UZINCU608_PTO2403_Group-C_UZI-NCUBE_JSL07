@@ -1,5 +1,3 @@
-// JavaScript for Direct Certificate Generation
-
 document.addEventListener('DOMContentLoaded', function () {
     const cardForm = document.getElementById('cardForm');
     const modal = document.getElementById('modal');
@@ -12,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     cardForm.addEventListener('submit', function (e) {
       e.preventDefault();
   
-      // Get input values
+      // 🚨 Get input values
       const studentNameInput = document.getElementById('studentName');
-      const personalMessageInput = document.getElementById('personalMessage');
-      const courseNameInput = document.getElementById('courseName'); // Make sure this input exists in your HTML
+      const personalMessageInput = ;
+      const courseNameInput = ; 
   
       const studentName = studentNameInput.value;
       const personalMessage = personalMessageInput.value;
@@ -26,20 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
   
-      // Generate certificate content dynamically
-      certificateContent.innerHTML = `
-      <h2>Certificate of Achievement</h2>
-      <p>This is to certify that</p>
+      // 🚨 Generate certificate content dynamically
+      certificateContent. = `
       <h3>${studentName}</h3>
-      <p>has almost completed the</p>
-      <h4>${courseName} Course</h4>
-      <p>with legendary perseverance and world-class bad-assery for never giving up🏆</p>
-      <img src="./logo.png" alt="Seal" style="margin-top: 20px; max-height: 100px;"> <!-- Adjust the max-height as needed -->
-      <p>${personalMessage}</p>
     `;
     
-  
-      // Display the modal
+      //  Display the modal
       modal.style.display = 'block';
   
       // Clear the form inputs
@@ -48,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if(courseNameInput) courseNameInput.value = '';
     });
   
-    // Close the modal when the close button is clicked
-    closeModal.addEventListener('click', function () {
-      modal.style.display = 'none';
+    //  🚨 Close the modal when the close button is clicked
+    closeModal.('', function () {
+      
     });
   });
   
