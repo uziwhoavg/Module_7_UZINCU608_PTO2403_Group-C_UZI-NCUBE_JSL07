@@ -11,23 +11,32 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
   
       // 🚨 Get input values
-      const studentNameInput = document.getElementById('studentName');
-      const personalMessageInput = ;
-      const courseNameInput = ; 
+      const studentNameInput = document.getElementById("studentName");
+      const personalMessageInput = document.getElementById("personalMessage");
+      const courseNameInput = document.getElementById("courseName");
   
-      const studentName = studentNameInput.value;
-      const personalMessage = personalMessageInput.value;
-      const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
-  
+      const studentName = studentNameInput.value.trim();
+      const personalMessage = personalMessageInput.value.trim();
+      const courseName =
+        courseNameInput && courseNameInput.value.trim() !== ""
+          ? courseNameInput.value.trim()
+          : "a course"; // Fallback to "a course" if no input
+
       if (studentName.trim() === '' || personalMessage.trim() === '') {
         alert('Please fill in all fields');
-        return;
       }
   
       // 🚨 Generate certificate content dynamically
-      certificateContent. = `
-      <h3>${studentName}</h3>
-    `;
+     certificateContent.innerHTML = `
+        <h1>Certificate of Achievement</h1>
+        <p>This is to clarify that</p>
+        <h2>${studentName}</h2>
+        <p>has almost completed</p>
+        <h2>${courseName}</h2>
+        <p>with legendary perserverance and world-class bad-assery for never giving up</p>
+        <img src="./logo.png" style="width: 250px; height: auto; object-fit: contain;">
+        <p>${personalMessage}</p>
+        `;
     
       //  Display the modal
       modal.style.display = 'block';
@@ -39,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     //  🚨 Close the modal when the close button is clicked
-    closeModal.('', function () {
-      
+    closeModal.addEventListener("click", function () {
+      modal.style.display = "none";
     });
   });
   
